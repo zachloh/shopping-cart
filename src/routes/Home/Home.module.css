@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 50px;
 }
 
 .hero {
@@ -22,11 +23,16 @@
   text-align: center;
 }
 
-.hero-text {
+.hero-text,
+.hero-text-secondary {
   color: #1b324f;
   font-size: 5rem;
   font-weight: bold;
   margin-bottom: 20px;
+}
+
+.hero-text-secondary {
+  font-size: 3rem;
 }
 
 .hero-button {

@@ -13,7 +13,7 @@ const Home = () => {
         />
         <div className={styles['hero-text-container']}>
           <p className={styles['hero-text']}>DISCOVER FASHION</p>
-          <p className={styles['hero-text']}>
+          <p className={styles['hero-text-secondary']}>
             Better when it's on <i>you</i>
           </p>
           <button className={styles['hero-button']}>Go to shop</button>
