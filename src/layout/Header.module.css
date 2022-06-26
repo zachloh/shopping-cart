@@ -1,0 +1,31 @@
+.header {
+  position: absolute;
+  width: 100%;
+  color: #1b324f;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 200px;
+}
+
+.title {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.links {
+  font-size: 1.5rem;
+  display: flex;
+  list-style: none;
+  gap: 150px;
+}
+
+.links > li {
+  display: flex;
+  cursor: pointer;
+}
+
+.links > li:hover {
+  transform: scale(1.05);
+}
