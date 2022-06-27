@@ -1,7 +1,6 @@
 .header {
   position: absolute;
   width: 100%;
-  color: #1b324f;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
