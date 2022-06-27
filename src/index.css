@@ -28,3 +28,8 @@ body,
 #root > div {
   height: 100%;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
