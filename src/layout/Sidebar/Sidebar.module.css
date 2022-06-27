@@ -5,11 +5,57 @@
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  right: 0;
+}
+
+.overlayEnter {
+  opacity: 0;
+}
+
+.overlayEnterActive {
+  opacity: 1;
+  transition: opacity 700ms ease-in-out;
+}
+
+.overlayExit {
+  opacity: 1;
+}
+
+.overlayExitActive {
+  opacity: 0;
+  transition: opacity 700ms ease-in-out;
 }
 
 .sidebar {
   background-color: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: max(35vw, 500px);
   padding: 70px;
+}
+
+.sidebarEnter {
+  transform: translateX(100vw);
+}
+
+.sidebarEnterActive {
+  transform: translateX(0);
+  transition: transform 700ms ease;
+}
+
+.sidebarExit {
+  transform: translateX(0);
+}
+
+.sidebarExitActive {
+  transform: translateX(100vw);
+  transition: transform 700ms ease-in-out;
 }
 
 .header {
