@@ -37,8 +37,9 @@ const Header = () => {
                 SHOP
               </NavLink>
             </li>
-            <li>
-              <img src={cart} alt="cart icon" onClick={handleOpenSidebar} />
+            <li className={styles.cart} onClick={handleOpenSidebar}>
+              <img src={cart} alt="cart icon" />
+              <span className={styles.badge}>5</span>
             </li>
           </ul>
         </nav>
