@@ -1,0 +1,24 @@
+.container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.spinner {
+  border: 16px solid #ddd;
+  border-radius: 50%;
+  border-top: 16px solid #999;
+  width: 80px;
+  height: 80px;
+  animation: spin 750ms linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

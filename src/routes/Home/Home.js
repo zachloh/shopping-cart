@@ -9,7 +9,7 @@ const Home = () => {
         <img
           src={heroImg}
           alt="a male and a female model wearing denims"
-          class={styles['hero-img']}
+          className={styles['hero-img']}
         />
         <div className={styles['hero-text-container']}>
           <p className={styles['hero-text']}>DISCOVER FASHION</p>

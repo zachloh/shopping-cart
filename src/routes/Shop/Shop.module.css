@@ -1,0 +1,15 @@
+.container {
+  background-color: #eee;
+  padding-top: 100px;
+  text-align: center;
+  min-height: 100vh;
+  height: auto !important;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 50px;
+  padding: 30px;
+}
