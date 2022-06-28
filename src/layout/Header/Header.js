@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useOpenSidebar } from '../../hooks/useOpenSidebar';
+import { useCart } from '../../context/CartContext';
 import Sidebar from '../Sidebar/Sidebar';
-import cart from '../../assets/images/shopping-outline.svg';
+import cartSVG from '../../assets/images/shopping-outline.svg';
 import styles from './Header.module.css';
 
 const Header = () => {
   const { shouldSidebarOpen, handleOpenSidebar, handleCloseSidebar } =
     useOpenSidebar();
+  const {
+    cart: { numberOfItems },
+  } = useCart();
 
   return (
     <>
@@ -38,8 +42,8 @@ const Header = () => {
               </NavLink>
             </li>
             <li className={styles.cart} onClick={handleOpenSidebar}>
-              <img src={cart} alt="cart icon" />
-              <span className={styles.badge}>5</span>
+              <img src={cartSVG} alt="cart icon" />
+              <span className={styles.badge}>{numberOfItems}</span>
             </li>
           </ul>
         </nav>
