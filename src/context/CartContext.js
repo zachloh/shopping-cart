@@ -79,16 +79,16 @@ export const CartContextProvider = ({ children }) => {
     numberOfItems: 0,
   });
 
-  const handleAddItem = (newItem) => {
+  const onAddItem = (newItem) => {
     dispatch({ type: ACTIONS.ADD_ITEM, payload: { newItem } });
   };
 
-  const handleRemoveItem = (id, price) => {
+  const onRemoveItem = (id, price) => {
     dispatch({ type: ACTIONS.REMOVE_ITEM, payload: { id, price } });
   };
 
   return (
-    <CartContext.Provider value={{ cart, handleAddItem, handleRemoveItem }}>
+    <CartContext.Provider value={{ cart, onAddItem, onRemoveItem }}>
       {children}
     </CartContext.Provider>
   );
