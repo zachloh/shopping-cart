@@ -3,12 +3,12 @@ import { convertToCents } from '../utils/priceConversion';
 
 const CartContext = createContext();
 
-const ACTIONS = {
+export const ACTIONS = {
   ADD_ITEM: 'add-item',
   REMOVE_ITEM: 'remove-item',
 };
 
-const cartReducer = (state, action) => {
+export const cartReducer = (state, action) => {
   switch (action.type) {
     case ACTIONS.ADD_ITEM:
       const { newItem } = action.payload;
