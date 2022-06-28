@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { CSSTransition } from 'react-transition-group';
 import styles from './Sidebar.module.css';
 
 const Sidebar = ({ shouldOpen, onCloseSidebar }) => {
+  const overlayRef = useRef(null);
+  const sidebarRef = useRef(null);
+
   return ReactDOM.createPortal(
     <>
       <CSSTransition
+        nodeRef={overlayRef}
         in={shouldOpen}
         timeout={700}
         classNames={{
@@ -17,9 +21,14 @@ const Sidebar = ({ shouldOpen, onCloseSidebar }) => {
         }}
         unmountOnExit
       >
-        <div className={styles.overlay} onClick={onCloseSidebar} />
+        <div
+          ref={overlayRef}
+          className={styles.overlay}
+          onClick={onCloseSidebar}
+        />
       </CSSTransition>
       <CSSTransition
+        nodeRef={sidebarRef}
         in={shouldOpen}
         timeout={700}
         classNames={{
@@ -30,7 +39,7 @@ const Sidebar = ({ shouldOpen, onCloseSidebar }) => {
         }}
         unmountOnExit
       >
-        <div className={styles.sidebar}>
+        <div ref={sidebarRef} className={styles.sidebar}>
           <div className={styles.header}>
             <p className={styles.title}>CART</p>
             <button className={styles.close} onClick={onCloseSidebar}>
