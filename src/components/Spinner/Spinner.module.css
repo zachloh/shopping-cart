@@ -1,24 +1,25 @@
 .container {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, -50%);
 }
 
-.spinner {
-  border: 16px solid #ddd;
-  border-radius: 50%;
-  border-top: 16px solid #999;
-  width: 80px;
-  height: 80px;
-  animation: spin 750ms linear infinite;
+.main {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 0;
+  animation: load 1s linear infinite;
+  transform-origin: center;
 }
 
-@keyframes spin {
+@keyframes load {
   0% {
-    transform: rotate(0deg);
+    stroke-dashoffset: 50;
+  }
+  50% {
+    stroke-dashoffset: 0;
   }
   100% {
-    transform: rotate(360deg);
+    stroke-dashoffset: -50;
   }
 }
