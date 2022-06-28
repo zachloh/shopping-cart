@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useContext } from 'react';
+import { convertToCents } from '../utils/priceConversion';
 
 const CartContext = createContext();
 
@@ -16,7 +17,7 @@ const cartReducer = (state, action) => {
       if (cartIndex < 0) {
         return {
           cart: [...state.cart, { ...newItem, quantity: 1 }],
-          totalAmount: state.totalAmount + newItem.price,
+          totalAmount: state.totalAmount + convertToCents(newItem.price),
           numberOfItems: state.numberOfItems + 1,
         };
       }
@@ -33,7 +34,7 @@ const cartReducer = (state, action) => {
 
       return {
         cart: newCart,
-        totalAmount: state.totalAmount + newItem.price,
+        totalAmount: state.totalAmount + convertToCents(newItem.price),
         numberOfItems: state.numberOfItems + 1,
       };
 
@@ -55,7 +56,7 @@ const cartReducer = (state, action) => {
 
         return {
           cart: newCart,
-          totalAmount: state.totalAmount - price,
+          totalAmount: state.totalAmount - convertToCents(price),
           numberOfItems: state.numberOfItems - 1,
         };
       }
@@ -63,7 +64,7 @@ const cartReducer = (state, action) => {
       const filteredCart = state.cart.filter((item) => item.id !== id);
       return {
         cart: filteredCart,
-        totalAmount: state.totalAmount - price,
+        totalAmount: state.totalAmount - convertToCents(price),
         numberOfItems: state.numberOfItems - 1,
       };
 
