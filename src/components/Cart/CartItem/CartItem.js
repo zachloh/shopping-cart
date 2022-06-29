@@ -27,12 +27,16 @@ const CartItem = ({ id, name, price, quantity, imageSrc }) => {
       <div className={styles.item}>
         <img src={imageSrc} alt={name} className={styles.image} />
         <div className={styles.description}>
-          <p className={styles.name}>{name}</p>
+          <p className={styles.name} data-testid="product-name">
+            {name}
+          </p>
           <div className={styles.bottom}>
-            <p>${getTotalPrice()}</p>
+            <p data-testid="product-price">${getTotalPrice()}</p>
             <div className={styles.quantity}>
               <button onClick={handleRemoveItem}>&#8722;</button>
-              <div className={styles.number}>{quantity}</div>
+              <div className={styles.number} data-testid="product-quantity">
+                {quantity}
+              </div>
               <button onClick={handleAddItem}>&#43;</button>
             </div>
           </div>
