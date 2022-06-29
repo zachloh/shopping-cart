@@ -26,6 +26,7 @@ const Sidebar = ({ shouldOpen, onCloseSidebar }) => {
           ref={overlayRef}
           className={styles.overlay}
           onClick={onCloseSidebar}
+          data-testid="overlay"
         />
       </CSSTransition>
       <CSSTransition
