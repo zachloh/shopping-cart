@@ -31,7 +31,7 @@ const Cart = ({ onCloseSidebar }) => {
       </div>
       <div className={styles.total}>
         <p>TOTAL:</p>
-        <p>${convertToDollars(totalAmount)}</p>
+        <p data-testid="total-price">${convertToDollars(totalAmount)}</p>
       </div>
       <button className={styles.checkout} onClick={onCloseSidebar}>
         CHECKOUT
