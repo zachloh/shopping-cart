@@ -43,7 +43,9 @@ const Header = () => {
             </li>
             <li className={styles.cart} onClick={handleOpenSidebar}>
               <img src={cartSVG} alt="cart icon" />
-              <span className={styles.badge}>{numberOfItems}</span>
+              <span role="status" className={styles.badge}>
+                {numberOfItems}
+              </span>
             </li>
           </ul>
         </nav>
